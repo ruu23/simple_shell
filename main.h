@@ -13,11 +13,11 @@
 #include <errno.h>
 
 
-void display_prompt();
+void display_prompt(void);
 void execute_command(char *command);
 void handle_arguments(char *command);
 void handle_path(char *command);
-void handle_exit();
-void handle_env();
+void handle_exit(void);
+void handle_env(void);
 
 #endif
