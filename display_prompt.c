@@ -11,7 +11,7 @@ void display_prompt(void)
 
 	while (1)
 	{
-		printf("simple_shell$ ");
+		printf("#cisfun$ ");
 		if (fgets(input, MAX_INPUT, stdin) == NULL)
 		{
 			printf("\n");
