@@ -12,6 +12,7 @@
 #include <fcntl.h>
 #include <errno.h>
 
+#define MAX_INPUT        255
 
 void display_prompt(void);
 void handle_execute(char *command);
