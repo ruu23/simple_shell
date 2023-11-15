@@ -4,5 +4,10 @@
  */
 void handle_env(void)
 {
-	printf("Handling env: Displaying the current environment\n");
+	int i;
+
+	for (i = 0; environ[i] != NULL; i++)
+	{
+		printf("%s\n", environ[i]);
+	}
 }

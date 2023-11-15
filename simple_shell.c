@@ -6,30 +6,24 @@
  */
 int main(void)
 {
-	char command[100];
+	char input[MAX_INPUT];
+	char command[MAX_INPUT];
+	char *arguments[MAX_ARGS];
 
 	while (1)
 	{
 		display_prompt();
-		if (fgets(command, sizeof(command), stdin) == NULL)
-		{
-			printf("\n");
-			break;
-		}
-		command[strcspn(command, "\n")] = 0;
-		if (strcmp(command, "exit") == 0)
-		{
-			handle_exit();
-		}
-		else if (strcmp(command, "env") == 0)
+		get_input(input);
+		scanf(input, "%s", command);
+		handle_exit(command);
+		if (strcmp(command, "env") == 0)
 		{
 			handle_env();
+			continue;
 		}
-		else
-		{
-			handle_arguments(command);
-			handle_path(command);
-		}
+		handle_arguments(input, command, arguments);
+		handle_path(command);
+		handle_execute(command);
 	}
 	return (0);
 }
