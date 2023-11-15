@@ -14,7 +14,7 @@
 
 
 void display_prompt(void);
-void execute_command(char *command);
+void handle_execute(char *command);
 void handle_arguments(char *command);
 void handle_path(char *command);
 void handle_exit(void);
